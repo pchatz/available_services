@@ -1,0 +1,22 @@
+language: cpp
+version: 0.1.0
+
+platform:
+    - target : ubuntu
+      version: 16.04
+      arch : i686
+
+api: 0.7.0
+
+install:
+    - sudo apt-get install -y libboost-all-dev
+
+build:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make
+
+package:
+    - build/available_services
+    - test.ini
